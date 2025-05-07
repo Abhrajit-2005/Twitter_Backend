@@ -2,6 +2,7 @@ const express = require('express');
 const connectDB = require('./config/database');
 const dotenv = require('dotenv');
 const app = express();
+
 dotenv.config();
 
 app.listen(3000, async () => {
