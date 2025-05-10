@@ -12,7 +12,7 @@ class CrudRepository {
         }
     }
 
-    async findAll() {
+    async getAll() {
         try {
             return await this.model.find({});
         } catch (error) {
@@ -21,7 +21,7 @@ class CrudRepository {
         }
     }
 
-    async findById(id) {
+    async get(id) {
         try {
             return await this.model.findById(id);
         } catch (error) {
