@@ -4,11 +4,17 @@ const connectDB = require('./config/database');
 const dotenv = require('dotenv');
 const apiroutes = require('./routes/index');
 
+const passport = require('passport');
+const passportAuth = require('./config/jwt-config');
+
 const app = express();
 dotenv.config();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
+app.use(passport.initialize());
+passportAuth(passport);
 
 app.use('/api', apiroutes);
 
